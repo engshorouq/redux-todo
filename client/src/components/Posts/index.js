@@ -9,9 +9,7 @@ class Posts extends Component {
     handleClick = () => {
         this.props.logoutUser();
     }
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps.auth);
-    }
+
     render() {
         const { loading, error } = this.props.auth;
         return (
