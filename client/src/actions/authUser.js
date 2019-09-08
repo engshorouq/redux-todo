@@ -1,4 +1,27 @@
-import { LOADING_TRUE, SIGNUP_USER, LOGIN_USER, CHECK_AUTH } from "./types";
+import { LOADING_TRUE, SIGNUP_USER, LOGIN_USER, CHECK_AUTH, LOGOUT_USER } from "./types";
+
+export const logoutUser = () => {
+  return async dispatch => {
+    dispatch({
+      type: LOADING_TRUE
+    })
+    try {
+      const result = await fetch('/api/v1/logout').then(res => res.json());
+      console.log(11111111111111, result);
+      dispatch({
+        type: LOGOUT_USER,
+        payload: result
+      })
+    } catch {
+      console.log(2222222222, 'catch');
+      dispatch({
+        type: LOGOUT_USER,
+        payload: {data: '', error: 'There Is Something Error Please Try Again'}
+      })
+    }
+
+  }
+}
 
 export const signupUser = userData => {
   return async dispatch => {

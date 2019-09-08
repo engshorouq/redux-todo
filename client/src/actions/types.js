@@ -10,3 +10,5 @@ export const LOADING_TRUE = 'LOADGIN_TRUE';
 
 export const CHECK_AUTH = 'CHECK_AUTH';
 
+export const LOGOUT_USER = 'LOGOUT_USER';
+

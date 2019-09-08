@@ -5,6 +5,7 @@ const { postPost } = require("./postPost");
 const { login } = require('./login');
 const { signup } = require('./signup');
 const { checkCookie } = require('./checkCookie');
+const { logout } = require('./logout');
 
 const router = express.Router();
 
@@ -17,5 +18,6 @@ router
   .route("/posts")
   .get(getPosts)
   .post(postPost);
+router.get('/logout', logout);
 
 module.exports = router;

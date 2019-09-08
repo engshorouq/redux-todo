@@ -2,7 +2,8 @@ import {
   SIGNUP_USER,
   LOADING_TRUE,
   LOGIN_USER,
-  CHECK_AUTH
+  CHECK_AUTH,
+  LOGOUT_USER
 } from "../actions/types";
 
 const initialState = {
@@ -26,6 +27,13 @@ export default (state = initialState, action) => {
         ...state,
         error: action.payload.error,
         isLogin: action.payload.data ? true : false,
+        loading: false
+      };
+      case LOGOUT_USER:
+      return {
+        ...state,
+        error: action.payload.error,
+        isLogin: action.payload.data ? false : true,
         loading: false
       };
     case LOADING_TRUE:
